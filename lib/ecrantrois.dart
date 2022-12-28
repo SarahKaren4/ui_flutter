@@ -65,20 +65,19 @@ class _HomesThreeState extends State<HomesThree> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            Text.rich(TextSpan(text: 'Hello Azelea', children: <InlineSpan>[
-              TextSpan(
-                text: 'It\' time to lunch',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold),
-              )
-            ]))
-          ],
+        title:   Container(
+          padding: EdgeInsets.only(left: 5),
+          child: Text.rich(TextSpan(text: 'Hello Azelea 👋\n', style: TextStyle(
+            color: Colors.black,
+          ), children: <InlineSpan>[
+            TextSpan(
+              text: 'It\' time to lunch',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w100),
+            )
+          ])),
         ),
 
         //iconTheme: ,
@@ -207,17 +206,30 @@ class _HomesThreeState extends State<HomesThree> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
-                                children: [
-                                  Text(
-                                    'Nearby food',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  FaIcon(FontAwesomeIcons.magnifyingGlass)
-                                ],
+                              // Column(
+                              //   children: [
+                              //     // Text(
+                              //     //   'Nearby food',
+                              //     //   style: TextStyle(
+                              //     //       fontSize: 22,
+                              //     //       fontWeight: FontWeight.bold),
+                              //     // ),
+                              //     //
+                              //    // FaIcon(FontAwesomeIcons.magnifyingGlass, size: 10,)
+                              //   ],
+                              // ),
+                              Text.rich(TextSpan(text: 'Nearby\n', style: TextStyle(
+                                color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold
                               ),
+                                  children: <InlineSpan>[
+
+                                    WidgetSpan(
+                                      child: Container(
+                                          padding:EdgeInsets.only(left:25, top:2),
+                                          child: FaIcon(FontAwesomeIcons.locationPin, size: 15,))
+
+                                    ),
+                              ])),
                               Text(
                                 'See All',
                                 style: TextStyle(
@@ -260,7 +272,7 @@ class _HomesThreeState extends State<HomesThree> {
                                       )
                                 ],
                               ),
-                              Padding(
+                              Container(
                                 padding: const EdgeInsets.only(
                                     left: 10, right: 10, top: 1),
                                 child: Column(

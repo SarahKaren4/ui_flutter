@@ -78,7 +78,6 @@ class _HomesTwoState extends State<HomesTwo> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
               const Text(
                 'Delivery',
                 style: TextStyle(color: Colors.black, fontSize: 15),
