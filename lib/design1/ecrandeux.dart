@@ -5,6 +5,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomesTwo extends StatefulWidget {
   const HomesTwo({super.key});
@@ -30,48 +32,7 @@ class _HomesTwoState extends State<HomesTwo> {
     ];
     var color = couleurs;
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
-        currentIndex: 2,
-        selectedItemColor: Colors.black,
-        items: const [
-          BottomNavigationBarItem(
-            activeIcon: Icon(
-              Icons.home,
-              color: Colors.black,
-            ),
-             // icon: 
-              label: "", icon: Icon(
-            Icons.home,
-            color: Colors.black,
-          ),),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.heart_broken,
-                color: Colors.black,
-              ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shopping_bag,
-                color: Colors.black,
-              ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.percent,
-                color: Colors.black,
-              ),
-              label: ""),
-       BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                color: Colors.black,
-              ),
-              label: "")
-        ],
-      ),
-      appBar: AppBar(
+       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         title: Column(
@@ -104,8 +65,8 @@ class _HomesTwoState extends State<HomesTwo> {
         actions: [
           Container(
               padding: EdgeInsets.only(right: MediaQuery.of(context).size.height/60),
-              height: MediaQuery.of(context).size.height/10,
-              width: MediaQuery.of(context).size.width/10,
+              height: 50.h,
+              width: 50.w,
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(10)),
               child: Image.asset('assets/img.jpg')),
@@ -114,7 +75,7 @@ class _HomesTwoState extends State<HomesTwo> {
       body: SafeArea(
         child: Container(
           //decoration: BoxDecoration(color: Colors.black),
-          padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/100, right: MediaQuery.of(context).size.width/100),
+          padding: EdgeInsets.only(left: 3.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,11 +84,16 @@ class _HomesTwoState extends State<HomesTwo> {
                   flex: 1,
                   child: Form(
                     child: Container(
-                        margin: EdgeInsets.only(right: 15),
-                        padding: const EdgeInsets.only(top: 5, bottom: 10),
+                        margin: EdgeInsets.only(right: 15.w),
+                        padding: const EdgeInsets.only(top: 5, bottom: 10).h,
                         child: TextField(
                           decoration: InputDecoration(
-                            icon: Icon(Icons.search),
+                            icon: Container(
+                              padding: EdgeInsets.only(left: 10.w),
+                              child: FaIcon(
+                                FontAwesomeIcons.search, size:15
+                              ),
+                            ),
                             hintText: '| What would you like to eat?',
                             enabledBorder: InputBorder.none,
                           ),
@@ -141,7 +107,7 @@ class _HomesTwoState extends State<HomesTwo> {
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(left: 7, bottom: 25),
+                            padding: EdgeInsets.only(left: 7.r, bottom: 25.r),
                             child: const Text('Choose category',
                                 style: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold)),
@@ -157,22 +123,24 @@ class _HomesTwoState extends State<HomesTwo> {
                               Column(
                                 children: <Widget>[
                                   Image.asset(
-                                    'assets/img2.jpg',
-                                    height: MediaQuery.of(context).size.height/35,
+                                    'assets/img.jpg',
+                                    height: 20.h,
+                                    width: 20.w,
                                   ),
                                   Container(
-                                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
+                                     // padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
                                       child: Text('Main'))
                                 ],
                               ),
                               Column(
                                 children: <Widget>[
                                   Image.asset(
-                                    'assets/img2.jpg',
-                                    height: MediaQuery.of(context).size.height/35,
+                                    'assets/img.jpg',
+                                    height: 20.h,
+                                    width: 20.w,
                                   ),
                                   Container(
-                                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
+                                     // padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
                                       child: Text('Appetizer'))
                                 ],
                               ),
@@ -180,10 +148,10 @@ class _HomesTwoState extends State<HomesTwo> {
                                 children: <Widget>[
                                   Image.asset(
                                     'assets/img2.jpg',
-                                    height: MediaQuery.of(context).size.height/35,
+                                    height: 20.h,
                                   ),
                                   Container(
-                                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
+                                      //padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
                                       child: Text('Drinks'))
                                 ],
                               ),
@@ -191,10 +159,10 @@ class _HomesTwoState extends State<HomesTwo> {
                                 children: <Widget>[
                                   Image.asset(
                                     'assets/img2.jpg',
-                                    height: MediaQuery.of(context).size.height/35,
+                                    height: 20.h,
                                   ),
                                   Container(
-                                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
+                                     // padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/90),
                                       child: Text('Dessert'))
                                 ],
                               ),
@@ -211,11 +179,11 @@ class _HomesTwoState extends State<HomesTwo> {
                   padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height/75, top: MediaQuery.of(context).size.height/75,),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children:  [
                       Text(
                         'Main course',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontWeight: FontWeight.bold, fontSize: 20.sp),
                       ),
                       Text(
                         'See All',
@@ -230,7 +198,7 @@ class _HomesTwoState extends State<HomesTwo> {
                   flex: 4,
                   child: Container(
                       //height: MediaQuery.of(context).size.height,
-                      margin: EdgeInsets.only(left: MediaQuery.of(context).size.width/50, right: MediaQuery.of(context).size.width/50),
+                      margin: EdgeInsets.only(left: 10, right: 10).w,
                       child: GridView.builder(
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
@@ -244,7 +212,7 @@ class _HomesTwoState extends State<HomesTwo> {
                                 decoration: BoxDecoration(
                                     // color: couleurs[index].color,
                                     color: couleurs[index],
-                                    borderRadius: BorderRadius.circular(10)),
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 /*
                                 child: Column(
                                   children: [
@@ -289,3 +257,8 @@ class _HomesTwoState extends State<HomesTwo> {
 }
 
 
+
+
+/*
+
+            */

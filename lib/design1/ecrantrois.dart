@@ -1,7 +1,8 @@
 // Copyright 2018 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uxui/main.dart';
@@ -67,14 +68,19 @@ class _HomesThreeState extends State<HomesThree> {
         backgroundColor: Colors.white,
         title:   Container(
           padding: EdgeInsets.only(left: 5),
-          child: Text.rich(TextSpan(text: 'Hello Azelea 👋\n', style: TextStyle(
+          child: Text.rich(TextSpan(
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  debugPrint('The button is clicked!');
+                },
+              text: 'Hello Azelea 👋\n', style: TextStyle(
             color: Colors.black,
           ), children: <InlineSpan>[
             TextSpan(
               text: 'It\' time to lunch',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w100),
             )
           ])),
@@ -149,12 +155,12 @@ class _HomesThreeState extends State<HomesThree> {
                               Text(
                                 'Category',
                                 style: TextStyle(
-                                    fontSize: 22, fontWeight: FontWeight.bold),
+                                    fontSize: 22.sp, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 'See All',
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.orangeAccent),
                               ),
@@ -219,7 +225,7 @@ class _HomesThreeState extends State<HomesThree> {
                               //   ],
                               // ),
                               Text.rich(TextSpan(text: 'Nearby\n', style: TextStyle(
-                                color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold
+                                color: Colors.black, fontSize: 20.sp, fontWeight: FontWeight.bold
                               ),
                                   children: <InlineSpan>[
 
@@ -233,7 +239,7 @@ class _HomesThreeState extends State<HomesThree> {
                               Text(
                                 'See All',
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.orangeAccent),
                               ),
@@ -283,7 +289,7 @@ class _HomesThreeState extends State<HomesThree> {
                                           'Nom du plat',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 13),
+                                              fontSize: 13.sp),
                                         ),
                                       ],
                                     ),

@@ -38,6 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.3.0
   flutter_emoji: ">= 2.0.0"
+  flutter_screenutil: ^5.6.0
+  path_drawing: ^0.4.0
+  readmore: ^2.1.0
+
+
 
 
 dev_dependencies:
@@ -62,11 +67,17 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # To add asskkets to your application, add an assets section, like this:
   assets:
     - assets/img.jpg
     - assets/img.png
+    - assets/profile.png
     - assets/img2.jpg
+    - assets/food2.svg
+    - assets/saucisses.png
+    - assets/pizza.png
+    - assets/paizza1.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -91,5 +102,14 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: CeraRegular
+      fonts:
+        - asset: assets/fonts/CeraRoundPro-Regular.otf
+        
+    - family: CeraThin
+      fonts:
+        - asset: assets/fonts/CeraRoundPro-Thin.otf
+     
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

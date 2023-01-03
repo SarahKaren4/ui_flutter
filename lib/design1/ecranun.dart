@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomesOne extends StatefulWidget {
   const HomesOne({super.key});
@@ -39,10 +40,10 @@ class _HomesOneState extends State<HomesOne> {
           actions: [
             Container(
               padding: EdgeInsets.only(right: 20),
-              child: Icon(
-                Icons.heart_broken_outlined,
+              child: FaIcon(
+                FontAwesomeIcons.star,
                 color: Colors.black,
-              ),
+              )
             )
           ],
         ),
@@ -69,19 +70,22 @@ class _HomesOneState extends State<HomesOne> {
                           Container(
                             margin: EdgeInsets.only(bottom: 7),
                             child: Container(
-                              child: const Text(
+                              child:  Text(
                                 "Grilled Beef Steak with Sauce ABC",
                                 style: TextStyle(
-                                    fontSize: 26, fontWeight: FontWeight.bold),
+                                    fontSize: MediaQuery.of(context).size.height>860?30:15,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
+
+                          //checkothers == true ? extraNews(context) : Container()
                           Row(
-                            children: const [
+                            children:  [
                               Text(
                                 'By resto Parmato Bapo',
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: MediaQuery.of(context).size.height>860?14:8,
                                   fontFamily: 'CeraThin',
                                   color: Colors.grey,
                                 ),
@@ -109,9 +113,8 @@ class _HomesOneState extends State<HomesOne> {
                               Align(
                                 alignment: Alignment.topLeft,
                                 child: SizedBox(
-                                  width: MediaQuery.of(context).size.width / 6,
-                                  height:
-                                      MediaQuery.of(context).size.height / 35,
+                                  width: 70,
+                                  height:MediaQuery.of(context).size.height>860?30:20,
                                   child: DecoratedBox(
                                     child: Row(
                                       mainAxisAlignment:
@@ -136,7 +139,7 @@ class _HomesOneState extends State<HomesOne> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width / 5,
-                                height: MediaQuery.of(context).size.height / 35,
+                                height: MediaQuery.of(context).size.height>860?30:22,
                                 child: DecoratedBox(
                                   child: Row(
                                     mainAxisAlignment:
@@ -164,7 +167,7 @@ class _HomesOneState extends State<HomesOne> {
                                 height: MediaQuery.of(context).size.height / 8,
                                 padding: EdgeInsets.all(5),
                                 decoration: BoxDecoration(
-                                    color: Colors.black,
+                                    color: Colors.red,
                                     borderRadius: BorderRadius.circular(20)),
                                 width: MediaQuery.of(context).size.width / 8,
                                 child: Column(
